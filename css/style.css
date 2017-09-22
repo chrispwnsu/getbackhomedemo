@@ -39,7 +39,7 @@ a {
 	font-size: 20px;
 }
 
-a:visited {
+a:visited, a {
     color: black;
 }
 
@@ -120,19 +120,26 @@ html {
 #home2 {
 	width: 100%;
 	height: 885px;
+	display: flex;
+	justify-content: center;
 }
 
 #container--search-bar {
-	float: left;
-	width: 50%;
+	width: 33%;
 }
 
 #container--map {
-	float: right;
-	width: 50%;
+	width: 33%;
 	margin-top: 100px;
 }
 
 #header {
 	margin-left: 800px;
+}
+
+/*twitter feed on search page*/
+#container--twitter-feed {
+	width: 34%;
+	height: 100%;
+	border: 1px solid blue;
 }
