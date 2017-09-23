@@ -31,3 +31,49 @@ $("#signup-toggle").click(function(){
   $("#login").toggle();
 });
 
+//section for the Twitter API 
+//I chose the FEMA twitter feeds, though I'd prefer to search by trend #; that could be next 
+
+var endpoint =  "http://search.twitter.com/search.json?"
+var params = ""
+var url = endpoint + params
+
+
+var USVIPR = "USVI or Puerto Rico"
+var Florida = "Florida"
+var Texas = "Texas or LA"
+
+var place = $("#FEMA-submit")
+console.log("place") //to test 
+
+
+	if (place == USVIPR) {
+		params = "FEMARegion2"; 
+
+	} else if (place == Texas) {
+		params = "FEMARegion6"; 
+	 
+	} else { 
+		params = "FEMARegion4";
+	}
+
+
+
+$("#FEMA-submit").click(function() {
+			
+  	$.ajax({
+    	url: endpoint + params,
+    	dataType: 'jsonp',
+    	success: function(data) {
+    		console.log(data);
+    		for (item in data['results']) {
+          $('#tweets').append(
+            '<li>' + data['results'][item]['text'] + '</li>');
+        	};
+   		}, 
+   		error: function() {
+       	$(".loading").html("The server doesn't seem to be working.");	
+        }  
+     })   
+});
+

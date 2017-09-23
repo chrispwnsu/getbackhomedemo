@@ -4,6 +4,7 @@
 	box-sizing: border-box;
 	font-family: 'Righteous', cursive;
 	font-color: white;
+
 }
 
 .container {
@@ -129,7 +130,7 @@ html {
 }
 
 #container--map {
-	width: 33%;
+	width: 25%;
 	margin-top: 100px;
 }
 
@@ -142,4 +143,11 @@ html {
 	width: 34%;
 	height: 100%;
 	border: 1px solid blue;
+}
+
+#place {
+	background-color: white;
+	display: flex;
+	justify-content: center;
+
 }
